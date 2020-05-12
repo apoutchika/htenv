@@ -64,3 +64,12 @@ services:
 
 - `key` (default 'HTACCESS') : Start of environment variables name
 - `realm` (default 'Restricted area') : Message on the popup
+
+```javascript
+app.use(
+  htenv({
+    key: 'MY_CUSTOM_ACCESS',
+    realm: 'Who are you ?',
+  })
+)
+```
