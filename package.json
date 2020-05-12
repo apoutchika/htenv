@@ -1,0 +1,32 @@
+{
+  "name": "htenv",
+  "version": "0.0.1",
+  "description": "Use basic auth from environments variables for express.",
+  "repository": "apoutchika/htenv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "basic",
+    "md5",
+    "crypt",
+    "env"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "apache-crypt": "^1.2.4",
+    "apache-md5": "^1.1.5",
+    "basic-auth": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
