@@ -30,10 +30,10 @@ app.get('/', (req, res, next) => {
 app.listen(8080, () => console.log('Server started'))
 ```
 
-And run with env vars
+And run with env vars :
 
 ```bash
-$ HTACCESS=john:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 node index.js
+$ HTACCESS=john:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 node index.js # pass is 42
 ```
 
 You can use many with append random chars :
