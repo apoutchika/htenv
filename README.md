@@ -5,7 +5,7 @@ Use basic auth from environments variables for express.
 ## Install
 
 ```bash
-$ npm install --save mem
+$ npm install --save htenv
 ```
 
 ## Usage
