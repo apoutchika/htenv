@@ -1,6 +1,6 @@
 {
   "name": "htenv",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Use basic auth from environments variables for express.",
   "repository": "apoutchika/htenv",
   "main": "index.js",

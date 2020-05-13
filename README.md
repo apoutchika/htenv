@@ -33,15 +33,15 @@ app.listen(8080, () => console.log('Server started'))
 And run with env vars :
 
 ```bash
-$ HTACCESS=john:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 node index.js # pass is 42
+$ HTPASSWD=john:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 node index.js # pass is 42
 ```
 
 You can use many with append random chars :
 
 ```bash
-$ HTACCESS=john:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 \
-  HTACCESS_1=john2:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 \
-  HTACCESS_X=john3:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 \
+$ HTPASSWD=john:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 \
+  HTPASSWD_1=john2:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 \
+  HTPASSWD_X=john3:\$apr1\$5lF5WhAG\$SfmLYeIAMTTqSnFrwd1tt0 \
   node index.js
 ```
 
@@ -55,14 +55,14 @@ services:
     volumes:
       - '.:/app'
     environment:
-      HTACCESS: "john:$$apr1$$5lF5WhAG$$SfmLYeIAMTTqSnFrwd1tt0"
-      HTACCESS_1: "john2:$$apr1$$5lF5WhAG$$SfmLYeIAMTTqSnFrwd1tt0"
-      HTACCESS_X: "john3:$$apr1$$5lF5WhAG$$SfmLYeIAMTTqSnFrwd1tt0"
+      HTPASSWD: "john:$$apr1$$5lF5WhAG$$SfmLYeIAMTTqSnFrwd1tt0"
+      HTPASSWD_1: "john2:$$apr1$$5lF5WhAG$$SfmLYeIAMTTqSnFrwd1tt0"
+      HTPASSWD_X: "john3:$$apr1$$5lF5WhAG$$SfmLYeIAMTTqSnFrwd1tt0"
 ```
 
 ## Options
 
-- `key` (default 'HTACCESS') : Start of environment variables name
+- `key` (default 'HTPASSWD') : Start of environment variables name
 - `realm` (default 'Restricted area') : Message on the popup
 
 ```javascript

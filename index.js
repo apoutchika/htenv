@@ -3,7 +3,7 @@
 const auth = require('basic-auth')
 const verify = require('./verify')
 
-const defaultOptions = { key: 'HTACCESS', realm: 'Restricted area' }
+const defaultOptions = { key: 'HTPASSWD', realm: 'Restricted area' }
 
 module.exports = (options) => {
   const { key, realm } = {
