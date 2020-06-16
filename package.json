@@ -1,6 +1,6 @@
 {
   "name": "htenv",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Use basic auth from environments variables for express.",
   "repository": "apoutchika/htenv",
   "main": "index.js",
@@ -19,7 +19,8 @@
   "dependencies": {
     "apache-crypt": "^1.2.4",
     "apache-md5": "^1.1.5",
-    "basic-auth": "^2.0.1"
+    "basic-auth": "^2.0.1",
+    "bluebird": "^3.7.2"
   },
   "devDependencies": {
     "eslint": "^7.0.0",

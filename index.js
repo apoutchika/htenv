@@ -1,5 +1,6 @@
 'use strict'
 
+const Promise = require('bluebird')
 const auth = require('basic-auth')
 const verify = require('./verify')
 
@@ -22,15 +23,19 @@ module.exports = (options) => {
     }, {})
 
   return async (req, res, next) => {
-    const { name, pass } = auth(req) || {}
-    if (verify(pass, access[name])) {
-      next()
-      return true
-    }
+    return new Promise((resolve, reject) => {
+      const { name, pass } = auth(req) || {}
+      if (verify(pass, access[name])) {
+        if (typeof next === 'function') {
+          next()
+        }
+        return resolve(true)
+      }
 
-    res.statusCode = 401
-    res.setHeader('WWW-Authenticate', `Basic realm="${realm}"`)
-    res.end('Access denied')
-    return false
+      res.statusCode = 401
+      res.setHeader('WWW-Authenticate', `Basic realm="${realm}"`)
+      res.end('Access denied')
+      return resolve(false)
+    })
   }
 }
