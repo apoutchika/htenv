@@ -21,14 +21,16 @@ module.exports = (options) => {
       return acc
     }, {})
 
-  return (req, res, next) => {
+  return async (req, res, next) => {
     const { name, pass } = auth(req) || {}
     if (verify(pass, access[name])) {
-      return next()
+      next()
+      return true
     }
 
     res.statusCode = 401
     res.setHeader('WWW-Authenticate', `Basic realm="${realm}"`)
     res.end('Access denied')
+    return false
   }
 }
